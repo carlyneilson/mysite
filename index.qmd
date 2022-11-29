@@ -1,0 +1,31 @@
+---
+title: "Carly Neilson"
+---
+
+
+```{r}
+1 + 1
+```
+
+---
+title: "Carly Neilson"
+about:
+  template: jolla
+  image: headshot.jpeg
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/carlyneilson
+---
+
+## Hi, I'm Carly and I'm an undergraduate student interested in education and library sciences.
+
+## Education
+The George Washington University, 2019-2023
+
+B.A. English and Creative Writing with a double major in Journalism
+
+## Skills
+
+Reporting, Editing, Poetry, Short Story Writing, Social Media
+
