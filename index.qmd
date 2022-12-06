@@ -2,11 +2,6 @@
 title: "Carly Neilson"
 ---
 
-
-```{r}
-1 + 1
-```
-
 ---
 title: "Carly Neilson"
 about:
