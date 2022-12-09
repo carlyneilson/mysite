@@ -14,8 +14,9 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - portfolio.qmd
+      - mysite.qmd
       - analysis walk through.qmd
+      - mywork.qmd
 
 format:
   html:
