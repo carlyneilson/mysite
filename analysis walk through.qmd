@@ -5,7 +5,7 @@ editor: visual
 
 ------------------------------------------------------------------------
 
-## \# Here is an example of filtering and sorting in R Studio:
+## Here is an example of filtering and sorting in R Studio:
 
 ```{r}
 #first we'll load our libraries
