@@ -1,9 +1,5 @@
 ---
 title: "Carly Neilson"
----
-
----
-title: "Carly Neilson"
 about:
   template: jolla
   image: headshot.jpeg
@@ -13,9 +9,10 @@ about:
       href: https://github.com/carlyneilson
 ---
 
-## Hi, I'm Carly and I'm an undergraduate student interested in education and library sciences. I'm from Key West, Florida. I love to read, cook, and spend time outside.
+Hi, I'm Carly and I'm an undergraduate student interested in education and library sciences. I'm from Key West, Florida. I love to read, cook, and spend time outside.
 
 ## Education
+
 The George Washington University, 2019-2023
 
 B.A. English and Creative Writing with a double major in Journalism
@@ -23,4 +20,3 @@ B.A. English and Creative Writing with a double major in Journalism
 ## Skills
 
 Reporting, Editing, Poetry, Short Story Writing, Social Media
-

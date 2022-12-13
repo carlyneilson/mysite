@@ -1,6 +1,5 @@
 ---
 title: "Portfolio"
-editor: visual
 ---
 
 # Check out my work!
