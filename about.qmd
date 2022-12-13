@@ -2,8 +2,4 @@
 title: "About"
 ---
 
-About this site
-
-```{r}
-
-```
+This is Carly Neilson's personal website!

@@ -1,27 +1,22 @@
 ---
 title: "Portfolio"
----
-
----
-about:
-  template: jolla
-  image: CarlyNeilson-Resume.pdf
+editor: visual
 ---
 
 # Check out my work!
 
 ## *GW Hatchet Clips*
 
-Here is a [story](https://www.gwhatchet.com/2021/08/30/faculty-return-to-classrooms-after-nearly-three-semesters-of-remote-learning/) I wrote for the Hatchet where I interviewed GW professors on their thoughts about returning to the physical classroom after the pandemic sparked online learning.
+-   Here is a [story](https://www.gwhatchet.com/2021/08/30/faculty-return-to-classrooms-after-nearly-three-semesters-of-remote-learning/) I wrote for the Hatchet where I interviewed GW professors on their thoughts about returning to the physical classroom after the pandemic sparked online learning.
 
-In this [article](https://www.gwhatchet.com/2021/08/30/what-to-expect-from-western-market/) I got the chance to preview Western Market in Foggy Bottom to give students a sneak peak of the new food vendors coming to campus.
+-   In this [article](https://www.gwhatchet.com/2021/08/30/what-to-expect-from-western-market/) I got the chance to preview Western Market in Foggy Bottom to give students a sneak peak of the new food vendors coming to campus.
 
-I wrote an [obituary](https://www.gwhatchet.com/2021/04/19/assistant-professor-of-health-sciences-dies-at-73-in-a-house-fire/) where I remembered the life of a GW professor by interviewing to his former students and colleagues.
+-   I wrote an [obituary](https://www.gwhatchet.com/2021/04/19/assistant-professor-of-health-sciences-dies-at-73-in-a-house-fire/) where I remembered the life of a GW professor by interviewing to his former students and colleagues.
 
 ## *Published Poetry*
 
-A [poem](https://issuu.com/gwcapitolletters/docs/version_for_issu) I wrote published in GW's literary magazine Capitol Letters.
+-   A [poem](https://issuu.com/gwcapitolletters/docs/version_for_issu) I wrote published in GW's literary magazine Capitol Letters.
 
-Here is a few more [poems](https://issuu.com/gwcapitolletters/docs/valentines) I wrote for a different issue of Capitol Letters.
+-   Here is a few more [poems](https://issuu.com/gwcapitolletters/docs/valentines) I wrote for a different issue of Capitol Letters.
 
 ------------------------------------------------------------------------

@@ -8,7 +8,7 @@ website:
     right:
       - icon: github
         href: https://github.com/carlyneilson
-  title: "mysite"
+  title: "Carly's Site"
   navbar:
     left:
       - href: index.qmd
