@@ -8,40 +8,42 @@ editor: visual
 ## Here is an example of filtering and sorting in R Studio:
 
 ```{r}
-#first we'll load our libraries
-#make sure to install the tidyverse if it's not already installed
+# First load our libraries that will help you complete the next steps
+# Specifically, make sure to install the tidyverse if it's not already installed
 library(tidyverse)
 library(lubridate)
 ```
 
 ```{r}
-# run this line below load the data for this assignment
-# we'll use a built-in dataset from the ggplot2 package (loaded as party of the tidyverse)
+# Run this line below load the data file in needed for this assignment
+# Use a built-in dataset from the ggplot2 package that isloaded as party of the tidyverse we just intalled
 housesales <- ggplot2::txhousing
 ```
 
 ```{r}
-# This dataset includes monthly housing sales by city in the state of texas from 2000-2015.
-# let's take a look at it
+# This dataset details monthly housing sales by city in Texas from the years 2000-2015
+# Look it over before we begin by typing the name of the data set below
 housesales
 ```
 
 ```{r}
-# The column "year" indicates the year. Filter to return only results from 2015. 
+# The column "year" indicates the year of sales for each city in Texas in this data set
+# Filter this data set to return only results from the year 2015 using the filter() function 
 housesales %>%
   filter(year == "2015")
 ```
 
 ```{r}
-# Similar to the above question, filter results from 2010 onward, so 2010-2015.
+# Similar to the above question, filter results from the year 2010 onward, so 2010-2015
+# Use the filter() function as you just did
 
 housesales %>%
   filter(year >= "2010")
 ```
 
 ```{r}
-# The "city" column contains the relevant city. Filter to return only results for Houston
-# (note, remember R is case sensitive)
+# The "city" column contains the city relevant to the coresponding data. Filter to return only results for Houston
+# (remember R is case sensitive when typing in the city name look closely at the data set)
 
 housesales %>%
   filter(city == "Houston")
@@ -49,8 +51,9 @@ housesales %>%
 ```
 
 ```{r}
-# Filter for only where the city is Houston as above, and now also filter for only 
-# the year 2010. The results should give you 12 records, one for each month in 2010 for Houston.
+# Filter for housesales in Houston in only the year 2010
+# Do the same function as above but add the year
+# The results should give you 12 records, this means one for each month in 2010 for Houston
 
 housesales %>%
   filter(city == "Houston", year == "2010")
@@ -58,9 +61,9 @@ housesales %>%
 ```
 
 ```{r}
-# Build on what you've done above. Filter for only where the city is Houston as above, 
-# and the year is 2010. Now add a sort using arrange() to sort the results based on the number
-# of home sales (the "sales" column) from most to least.
+# Now its time to further bulid on what you've done above by filtering for only the city  Houston and the year 2010 (just like what you did) 
+# But, now add a sort using arrange() to sort the results based on the number of home sales in descending order, this means from highest to lowest sales
+# Use the sales column in the data when using the arange function
 
 housesales %>%
   filter(city == "Houston", year == "2010") %>%
@@ -68,8 +71,7 @@ housesales %>%
 ```
 
 ```{r}
-# Piggyback on what you've done above. 
-# Do the same as #5, only this time instead of Houston return records for Dallas
+# Use the same info as you just did above, except instead of Houston return records for Dallas's housesales in 2010 in descending order
 
 housesales %>%
   filter(city == "Dallas", year == "2010") %>%
@@ -77,23 +79,18 @@ housesales %>%
 ```
 
 ```{r}
-# Sometimes metrics like home sales have a seasonal quality to them, much like 
-# retail sales. There are times of year that are naturally more active, and others where
-# it's slower.
-# That means sometimes you'll want to isolate the same time period across multiple years
-# to compare how it went based on similar times of year.
-# Let's do that here: we're going to look only for sales that happened in the month of JUNE.
-#
-# Filter for the city is Dallas, and the month is June (the number 6). 
+# Sometimes metrics like home sales have a seasonal quality to them, much like retail sales. There are times of year that are naturally more active, and others where it's slower.
+# That means sometimes you'll want to isolate the same time period across multiple years to compare how it went based on similar times of year
+# Let's do that here: we're going to look only for sales that happened in the month of JUNE
+# Filter for the city is Dallas, and the month is June (the number 6)
 
 housesales %>%
   filter(city == "Dallas", month == "6")
 ```
 
 ```{r}
-# Build on what we've done above. Now that we have June numbers for Dallas for every year,
-# arrange the results by sales from highest-to-lowest to show what year had the highest June sales.
-
+# Build on the past three problems above
+# Now that we have June numbers for Dallas for every year, arrange the results by sales in descending order to show what year had the highest sales in June
 
 housesales %>%
   filter(city == "Dallas", month == "6") %>%
@@ -101,8 +98,7 @@ housesales %>%
 ```
 
 ```{r}
-# Now do the same as Question 8, but this time instead of Dallas, show results for Corpus Christi
-
+# Now do the same as above, but this time instead of Dallas, show results for the city Corpus Christi in June in descending order
 
 housesales %>%
   filter(city == "Corpus Christi", month == "6") %>%
@@ -110,8 +106,7 @@ housesales %>%
 ```
 
 ```{r}
-# Finally, using the Corpus Christi code from Question 9, instead of June
-# use the month of February (2) instead.
+# Finally, using the same Corpus Christi line of code from above instead of June use the month of February (2).
 
 housesales %>%
   filter(city == "Corpus Christi", month == "2") %>%
