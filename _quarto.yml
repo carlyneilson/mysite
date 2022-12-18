@@ -14,10 +14,10 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - analysis walk through.qmd
-      - mywork.qmd
       - href: https://drive.google.com/file/d/151qo6aYI4JgiBVJDd9_rQqhx2fe8u5RN/view?usp=sharing
         text: Resume
+      - mywork.qmd
+      - analysis walk through.qmd
       - paper.qmd
       - newsstory.qmd
 
