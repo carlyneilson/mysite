@@ -18,6 +18,7 @@ website:
         text: Resume
       - mywork.qmd
       - analysis walk through.qmd
+      - electionproject.qmd
       - paper.qmd
       - newsstory.qmd
 
