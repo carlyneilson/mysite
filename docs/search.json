@@ -40,5 +40,26 @@
     "title": "About",
     "section": "",
     "text": "This is Carly Neilson’s personal website. Here you can find my resume, work samples and more!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Carly Neilson",
+    "section": "",
+    "text": "Hi, I’m Carly and I’m an undergraduate student interested in education and library sciences. I’m from Key West, Florida. I love to read, cook, and spend time outside."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Carly Neilson",
+    "section": "Education",
+    "text": "Education\nThe George Washington University, 2019-2023\nB.A. English and Creative Writing with a double major in Journalism"
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "Carly Neilson",
+    "section": "Skills",
+    "text": "Skills\nReporting, Editing, Poetry, Short Story Writing, Social Media"
   }
 ]
