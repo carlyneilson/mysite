@@ -22,8 +22,6 @@ options(stringsAsFactors = FALSE)
 joined_vacomparison <- readRDS(here("processed_data", "joined_vacomparison.rds"))
 ```
 
-
-
 ```{r}
 # Create a new column in the joined_vacomparison data set that shows the difference between the percentage of the vote Youngkin and Trump received. This column should include only the top 5 counties (known as localities in Virginia) with the highest differences between Youngkin and Trump votes. 
 # To do this you will create a function using mutate to generate a new table with the new column included. 
@@ -36,27 +34,47 @@ youngkintrumppercentage <- joined_vacomparison %>% mutate(youngkin_vs_trump = pc
 # Next, create a well-labled chart to visualize use the data you just made
 # You will create a bar or column chart using the ggplot2 package. Be sure to properly label each axis and give the chart its own title.
 
-youngkintrumppercentage %>% ggplot(aes(x = locality, y = youngkin_vs_trump)) + geom_col() + coord_flip() + scale_y_continuous(name = "Youngkin vs Trump Vote Percentage") + scale_x_discrete(name ="Virginia Localities") + labs(title = "Top 5 Highest Margins Between Youngkin & Trump")
+youngkintrumppercentage %>% ggplot(aes(x = reorder (locality,youngkin_vs_trump), y = youngkin_vs_trump)) + geom_col(color = "black", fill = "red") + coord_flip() +  scale_y_continuous(name = "Youngkin vs Trump Vote Percentage") + scale_x_discrete(name ="Virginia Localities") + labs(title = "Top 5 Highest Margins Between Youngkin & Trump")
 ```
 
 ```{r}
 # Now, create another chart, but this time to show the top 5 counties where Youngkin got the highest percentage of the vote.
 # In order to do so you must create a new column and table that shows the top five counties where Youngkin did best. Use the mutate and head functions again. 
 
-top5countiesyoungkin <- joined_vacomparison %>% mutate(youngkintop5 = pct_youngkin) %>% head(5)
+top5countiesyoungkin <- joined_vacomparison %>% mutate(youngkintop5 = pct_youngkin) %>% arrange(desc(youngkintop5)) %>% head(5)
 ```
 
 ```{r}
 # Now its time to create the bar/column chart with the new data! Again, use ggplot2 to make the chart and give proper axis and chart titles.
 
-top5countiesyoungkin %>%  ggplot(aes(x = locality, y = youngkintop5)) + geom_col() + coord_flip() + scale_y_continuous(name = "Youngkin's Percentage of the Vote") + scale_x_discrete(name = "Virginia Localities") + labs(title = "Youngkin's Top 5 Victories")
+top5countiesyoungkin %>%  ggplot(aes(x = reorder (locality, youngkintop5), y = youngkintop5)) + geom_col(color = "black", fill = "red") + coord_flip() + scale_y_continuous(name = "Youngkin's Percentage of the Vote", breaks = seq(0, 100, 25)) + scale_x_discrete(name = "Virginia Localities") + labs(title = "Youngkin's Top 5 Victories")
 ```
 
 ```{r}
 # Create another table that shows the top 5 counties based on where the other candidate, Mcauliffe, got the highest percentage of the vote. 
 # Again, you must create a new column and table that shows the top five counties where Mcauliffe did best. Use mutate again to rename the column. You should also clean up the data set, so filter out the other data from the original table that is not relevant to Mcauliffe's results using the select function. Use the head function to view the table you just created.
 
-top5countiesmcauliffe <- joined_vacomparison %>% mutate(mcauliffe_percentage_of_vote = pct_mcauliffe, mcauliffe_number_of_votes = mcauliffe) %>% head(5) %>% select(-biden, -trump, -biden_pct, -trump_pct, -youngkin, -pct_youngkin, -mcauliffe, -pct_mcauliffe)
+top5countiesmcauliffe <- joined_vacomparison %>% mutate(mcauliffe_percentage_of_vote = pct_mcauliffe, mcauliffe_number_of_votes = mcauliffe) %>% arrange(desc(mcauliffe_percentage_of_vote)) %>% arrange(desc(mcauliffe_number_of_votes)) %>% head(5) %>% select(-biden, -trump, -biden_pct, -trump_pct, -youngkin, -pct_youngkin, -mcauliffe, -pct_mcauliffe)
 
 head(top5countiesmcauliffe)
 ```
+
+```{r}
+# In the excercise showing the highest margins between Trump and Youngkin's percent of the vote, I found it interesting that Trump did better in certain counties than Youngkin, even though they are both Republican candidates. But I wanted to see if the counties where Trump did best aligned with where Youngkin did best. From the original table I made you can see Youngkin did best in Lee, Scott, Tazewell, Bland, and Russell counties. 
+# I decided to analyze the counties that Youngkin did best in compared to the counties that Trump did best in. So I create a table showing the top 5 counties where Trump got the highest percentage of the vote. I found that Trump's most successful counties were Lee, Buchanan, Bland, Scott and Tazewell counties. This showed me that there were counties where Trump and Youngkin both did there best in: Lee, Scott, Tazewell and Bland counties. But from my chart I did earlier it showed they had a high percent difference in Radford City, King George County, Charlotte County, Mecklenberg County, and Prince Edward County. It is odd that they did not get a similar number or percent of the vote in each county. This is probably explained by the differences in Trump and Youngkin's campaigns and their political ideaology.
+
+top5countiestrump <- joined_vacomparison %>% mutate(trump_percentage_of_vote = trump_pct) %>% arrange(desc(trump_percentage_of_vote)) %>% head(5) %>% select(-youngkin, -trump, -biden, -pct_youngkin, -biden_pct, -mcauliffe, -trump_pct, -pct_mcauliffe)
+
+head(top5countiestrump)
+```
+
+```{r}
+# I was intrugued by the differences in the two Republican candidates in Virginia's election, so I wanted to see how the Democrat candidates compared.
+# I compared Biden's percentage of the vote to Mcauliffe's by creating a bar chart like the first problem in this document. I found that the margins of the highest difference were around the same with a mean of 8.8% for the Republicans and a mean of 8.1% for the Democrats.
+# I further compared this data and found that the counties where Trump and Youngkin had the highest difference in vote percentage did best was similar to the that same data for Biden and Mcauliffe. There was some overlap with the counties: Charlotee, Mecklenberg, and Radford. This makes sense that where Biden/Mcauliffe did worst Trump/Youngkin did best and vice versa.
+
+mcauliffebidenpercentage <- joined_vacomparison %>% mutate(mcauliffe_vs_biden = biden_pct - pct_mcauliffe) %>% arrange(desc(mcauliffe_vs_biden)) %>% head(5)
+
+mcauliffebidenpercentage %>% ggplot(aes(x = reorder (locality, mcauliffe_vs_biden), y = mcauliffe_vs_biden)) + geom_col(color = "black", fill = "blue") + coord_flip() +  scale_y_continuous(name = "Biden vs Mcauliffe Vote Percentage") + scale_x_discrete(name ="Virginia Localities") + labs(title = "Top 5 Highest Margins Between Biden & Mcauliffe")
+```
+
