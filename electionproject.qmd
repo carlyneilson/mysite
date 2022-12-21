@@ -45,13 +45,11 @@ youngkintrumppercentage %>% ggplot(aes(x = locality, y = youngkin_vs_trump)) + g
 top5countiesyoungkin <- joined_vacomparison %>% mutate(youngkintop5 = pct_youngkin) %>% head(5)
 ```
 
-
 ```{r}
 # Now its time to create the bar/column chart with the new data! Again, use ggplot2 to make the chart and give proper axis and chart titles.
 
 top5countiesyoungkin %>%  ggplot(aes(x = locality, y = youngkintop5)) + geom_col() + coord_flip() + scale_y_continuous(name = "Youngkin's Percentage of the Vote") + scale_x_discrete(name = "Virginia Localities") + labs(title = "Youngkin's Top 5 Victories")
 ```
-
 
 ```{r}
 # Create another table that shows the Top 5 counties based on where the other candidate, Mcauliffe, got the highest percentage of the vote. 
